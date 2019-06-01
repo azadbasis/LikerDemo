@@ -2,6 +2,7 @@ package com.liker;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void previousView(View v) {
-        viewFlipper.setInAnimation(this, R.anim.slide_in_right);
-        viewFlipper.setOutAnimation(this, R.anim.slide_out_left);
+        viewFlipper.setInAnimation(this, R.anim.slideinright);
+        viewFlipper.setOutAnimation(this, R.anim.slideoutleft);
         viewFlipper.showPrevious();
     }
 
@@ -40,4 +41,15 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
         viewFlipper.showNext();
     }
+
+    public void openActivity3(View view) {
+        Intent intent = new Intent(this, ScreenTest.class);
+        startActivity(intent);
+    }
+
+   /* @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }*/
 }
